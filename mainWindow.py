@@ -1,4 +1,5 @@
 import sys
+import os
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtGui import QIcon
@@ -18,7 +19,8 @@ class mainFile(QWidget):
         self.mainGui.quit_button.clicked.connect(self.close)
         self.mainGui.image_button.clicked.connect(self.open_image_window)
         self.mainGui.video_button.clicked.connect(self.open_video_window)
-        self.setWindowIcon(QIcon(f"D:\\Lane Detection\\GUI\\road_icon.png"))
+        icon_path = os.path.join(os.path.dirname(__file__), "GUI", "road_icon.png")
+        self.setWindowIcon(QIcon(icon_path))
 
     def open_video_window(self):
         self.hide()

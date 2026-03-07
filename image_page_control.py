@@ -21,8 +21,13 @@ class imageWindow(QWidget):
         # self.movie = QMovie()
 
     def browsefile(self):
-        fname = QFileDialog.getOpenFileName(self,'open file',"D:\Lane Detection")
-        self.image_url = fname[0]
+        fname, _ = QFileDialog.getOpenFileName(
+            self,
+            'Open image file',
+            "",
+            "Image Files (*.png *.jpg *.jpeg *.bmp)"
+        )
+        self.image_url = fname
         if self.image_url:
             self.work_on_image()
 

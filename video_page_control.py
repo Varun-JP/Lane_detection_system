@@ -53,8 +53,12 @@ class videoWindow(QWidget):
         self.timer.stop()
 
     def browsefile(self):
-        fname, _ = QFileDialog.getOpenFileName(self, 'Open file', "D:\\Lane Detection",
-                                               "Video Files (*.mp4 *.avi *.mov)")
+        fname, _ = QFileDialog.getOpenFileName(
+            self,
+            'Open video file',
+            "",
+            "Video Files (*.mp4 *.avi *.mov)"
+        )
         if fname:
             self.video_url = fname
             # print(self.video_url)
